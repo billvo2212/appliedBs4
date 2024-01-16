@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* START HEADER */
+.header {
+  /* this is w-100 */
+  /* width: 100%;  */
+  
+  z-index: 99;
+}
+
+.header__logo i{
+  font-size: 3rem;
+  color: #35a22c;
+}
+
+/* @media screen and (max-width: 575.98px) {
+  .header__logo i {
+    font-size: 2rem;
+  }
+}
+
+.header__logo span {
+  font-size:  2.5rem;
+}
+@media screen and (max-width: 575.98px) {
+  .header__logo span {
+    font-size: 2rem;
+  }
+} */
+
+.header #navbarPort .nav-item{
+  margin: 0 10px;
+}
+
+.header #navbarPort .nav-link {
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+/* ::after gióng như 1 content trong thẻ chứa nó */
+.header #navbarPort .nav-link::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  /* width: 0; */
+  background-color: #35a22c;
+  position: absolute;
+  left: 0;
+  /* left: -100%; */
+  bottom: 0;
+  /* display: block; */
+  transform: translateX( -100%);
+  transition: all 0.3s;
+}
+
+.header #navbarPort .nav-link:hover {
+  color: #35a22c;
+}
+
+.header #navbarPort .nav-link:hover::after {
+  transform: translateX(0);
+  /* width: 100%; */
+  /* left: 0; */
+}
+
+.header #navbarPort .nav-item.active .nav-link{
+  color: #35a22c;
+}
+
+.header #navbarPort .nav-item.active .nav-link::after {
+  transform: translateX(0);
+  /* left: 0; */
+}
+
+.header .navbar-toggler {
+  background-color: #35a22c;
+}
+
+/* .header .navbar-collapse {
+  background: white;
+} */
+
+/* @media screen and (max-width: 991.98px) {
+  .header #navbarPort .nav-link {
+    color: #35a22c;
+  }
+
+  .header #navbarPort .nav-item.active .nav-link::after {
+    display: none;
+  }
+} */
+/* END HEADER */
+
+/* START CAROUSEL */
+.portCarousel .carousel-item img{
+  height: 100vh;
+  width: 100vh;
+
+  /* object-fit: giúp hình ảnh không bị bóp méo khi set width 100% */
+  object-fit: cover;
+}
+
+.portCarousel .carousel-caption {
+  /* để canh 1 thằng nằm canh giữa trục x và y khi có position: absolute*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.portCarousel .carousel__avt {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.portCarousel .carousel__avt img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portCarousel .carousel-caption h5{
+  font-size: 3.5rem;
+}
+
+.portCarousel .carousel-caption p {
+  font-size: 1.5rem;
+}
+
+.portCarousel .carousel-item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 43, 54, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.portCarousel .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* border: none; */
+}
+
+.portCarousel .carousel-indicators .active {
+  background-color: #35a22c;
+  /* background: #35a22c; */
+}
+
+.portCarousel .carousel-indicators {
+  bottom: 10%;
+}
+/* END CAROUSEL */
+
+
+/* START PROJECT */
+.project {
+  margin: 50px 0;
+}
+
+.project__title h2 {
+  font-size: 3rem;
+}
+
+.project .nav .nav-item {
+  margin: 0 5px;
+}
+
+.project .nav .nav-link {
+  background: white;
+  border: 1px solid black;
+}
+
+.project .nav .nav-link.active {
+  background: #35a22c;
+  border-color: #35a22c;
+}
+
+/* outline -> sau khi :hover sẽ có trạng thái outline (viền border xanh quanh item */
+.project .nav .nav-link:focus {
+  outline: none;
+}
+
+.project__item {
+  margin-top: 30px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) ;
+}
+
+.project__item .card-img-top {
+  border-radius: 15px 15px 0 0;
+}
+
+.project__item .card-body {
+  border: 1px solid transparent;
+  border-radius: 0 0 15px 15px;
+  transition: all 0.3s;
+}
+
+.project__item .card-title {
+  transition: all 0.3s;
+}
+
+.project__item:hover .card-body {
+  border-color: #35a22c;
+  border-top-color: transparent;
+}
+
+.project__item:hover .card-title {
+  color: #35a22c;
+}
+/* END PROJECT */
+
+/* START SERVICE */
+.service {
+  background: url("../img/3.jpg") no-repeat center / cover;
+  padding: 100px 0;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.service::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #070a0cb8;
+  /* background: rgba(39, 43, 54, 0.5); */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.service .container {
+  position: relative;
+  z-index: 2;
+}
+
+.service__card {
+  background: rgba(255, 255, 255,0.2);
+  border: 1px solid rgba(255, 255, 255,0.2);
+  border-radius: 10px;
+  text-align: center;
+  padding: 40px;
+
+  /* chỉnh độ nhoè */
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+}
+
+.service__card i {
+  font-size: 3rem;
+  color: #35a22c;
+}
+
+.service__card h3 {
+  font-size: 1.6rem;
+  color: white;
+  margin: 20px 0;
+}
+
+.service__card p {
+  font-size: 1rem;
+  color: white;
+}
+
+.service__card:hover {
+  background: black;
+  border-color: white;
+}
+/* END SERVICE */
+
+/* Start award */
+.award {
+  padding: 80px 0;
+  position: relative;
+}
+
+.award::before {
+  content: '';
+  background: url('../img/memphis_3.png') no-repeat bottom left / 50% auto;
+  /* background-size: 50% (width) auto(height) */
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.award__left {
+  background-color: rgba(red, green, blue, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  padding: 45px;
+  backdrop-filter: blur(3px);
+}
+
+.award__left h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.award__left p {
+  color: #888;
+}
+/* END Award */
+
+
+/* Start Footer */
+.footer {
+  padding: 40px 0;
+  background-color: #222;
+  color: #aaa;
+  text-align: center;
+}
+
+.footer__social__item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  color: #aaa;
+  line-height: 40px;
+  margin: 0 10px;
+  transition: all 0.3s;
+}
+
+.footer__social__item:hover {
+  border-color: #35a22c;
+  color: #35a22c;
+}
+
+.footer__copyright {
+  border-top: 1px solid #454545;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+/* End Footer */
